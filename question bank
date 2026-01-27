@@ -1,0 +1,29 @@
+//average of three studs using class and function:
+#include <iostream>
+using namespace std;
+
+
+class AverageMarks {
+    int m1, m2, m3;
+
+public:
+    void input() {
+        cout << "Enter marks of student 1: ";
+        cin >> m1;
+        cout << "Enter marks of student 2: ";
+        cin >> m2;
+        cout << "Enter marks of student 3: ";
+        cin >> m3;
+    }
+
+    float calculateAverage() {
+        return (m1 + m2 + m3) / 3;
+    }
+};
+
+int main() {
+    AverageMarks obj;
+    obj.input();
+    cout << "Average Marks = " << obj.calculateAverage() << endl;
+    return 0;
+}
