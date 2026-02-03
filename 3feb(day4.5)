@@ -1,0 +1,15 @@
+#include<iostream>
+#include<string>
+using namespace std;
+int main(){
+    int number;
+    string name;
+    cout<< "enter number";
+    cin >> number;
+    cin.ignore(); // cin pervious input, so to ignore that input and use new.
+    cout << " enter name";
+    getline(cin,name);
+    cout<<number;
+    cout<<name;
+    return 0;
+}
