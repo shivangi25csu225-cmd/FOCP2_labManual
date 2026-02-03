@@ -1,0 +1,23 @@
+//Read from STDIN, Write to STDOUT : hackerearth
+
+
+#include <iostream>
+#include <string>
+
+
+int main() {
+    int n;
+    std::string s;
+
+    // Read an integer and a string from STDIN
+    std::cin >> n >> s;
+
+    // Process the input (example: calculate double the integer)
+    int result = n * 2;
+
+    // Print the result and the string to STDOUT, with a newline at the end
+    std::cout << result << std::endl;
+    std::cout << s << std::endl;
+
+    return 0;
+}
