@@ -1,0 +1,35 @@
+#include <iostream>
+
+class PureSwapper {
+private:
+    int a, b;
+
+public:
+    PureSwapper(int n1, int n2) : a(n1), b(n2) {}
+
+    void swapWithAssignment() {
+        // We use a third container to hold the value temporarily
+        // No +, -, *, /, or ^ used here.
+        int temp = a; 
+        a = b;        
+        b = temp;     
+
+        std::cout << "After Swap: a = " << a << ", b = " << b << std::endl;
+    }
+
+    void display() {
+        std::cout << "Before Swap: a = " << a << ", b = " << b << std::endl;
+    }
+};
+
+int main() {
+    int x, y;
+    std::cout << "Enter two numbers: ";
+    std::cin >> x >> y;
+
+    PureSwapper obj(x, y);
+    obj.display();
+    obj.swapWithAssignment();
+
+    return 0;
+}
