@@ -1,0 +1,36 @@
+/*wap to find largets amongst 3 number by using all these function types
+ and classes and objects*/
+ 
+ // with argument and with return type
+
+ #include <iostream>
+using namespace std;
+
+class Largest
+{
+public:
+    int findLargest(int a, int b, int c)   // with arguments, with return type
+    {
+        int max = a;
+
+        if (b > max)
+            max = b;
+        if (c > max)
+            max = c;
+
+        return max;   // return largest number
+    }
+};
+
+int main()
+{
+    int x, y, z;
+    cout << "Enter three numbers: ";
+    cin >> x >> y >> z;
+
+    Largest obj;                       // object creation
+    int result = obj.findLargest(x, y, z);   // passing arguments
+
+    cout << "Largest number is: " << result;
+    return 0;
+}
