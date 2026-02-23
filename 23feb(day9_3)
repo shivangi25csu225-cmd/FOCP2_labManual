@@ -1,0 +1,86 @@
+/*Design a class BankAccount with the following detalls:
+
+Data Members:
+account Number (int)
+accountHolderName (string)
+balance (float)
+
+Member Functions:
+createAccountl) → to input account details deposit(float amount) → to add money to balance
+withdraw(float amount) → to withdraw money (only If sufficient balance)
+displayDetails) → to show account information
+
+Task:
+Write a C++ program that:
+Creates one bank account object
+Deposits 5000 into the account
+Attempts to withdraw R7000
+Displays the final account details*/
+
+
+#include <iostream>
+using namespace std;
+class BankAccount
+{
+private:
+    int accountNumber;
+    string accountHolderName;
+    float balance;
+
+public:
+    // Function to create account
+    void createAccount()
+    {
+        cout << "Enter Account Number: ";
+        cin >> accountNumber;
+
+        cout << "Enter Account Holder Name: ";
+        cin.ignore();               // To clear buffer
+        getline(cin, accountHolderName);
+
+        cout << "Enter Initial Balance: ";
+        cin >> balance;
+    }
+
+    // Function to deposit money
+    void deposit(float amount)
+    {
+        balance = balance + amount;
+        cout << "Amount Deposited: " << amount << endl;
+    }
+
+    // Function to withdraw money
+    void withdraw(float amount)
+    {
+        if (amount <= balance)
+        {
+            balance = balance - amount;
+            cout << "Amount Withdrawn: " << amount << endl;
+        }
+        else
+        {
+            cout << "Insufficient Balance! Withdrawal Failed." << endl;
+        }
+    }
+
+    // Function to display details
+    void displayDetails()
+    {
+        cout << "\n----- Account Details -----" << endl;
+        cout << "Account Number: " << accountNumber << endl;
+        cout << "Account Holder Name: " << accountHolderName << endl;
+        cout << "Balance: " << balance << endl;
+    }
+};
+
+int main()
+{
+    BankAccount obj;
+
+    obj.createAccount();      // Create account
+    obj.deposit(5000);        // Deposit 5000
+    obj.withdraw(7000);       // Attempt to withdraw 7000
+    obj.displayDetails();     // Show final details
+
+    return 0;
+}
