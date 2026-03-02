@@ -1,0 +1,72 @@
+/*Alice and Bob, developers at Z-Game Architects, have been assigned the task of
+implementing an inventory management system for an upcoming C++ based RPG
+(Role-Playing Game). The game features a dynamic inventory system that tracks different categories of Armor collected by players.
+In the game, Armor items are stored in two different storage zones, represented as 2x2 matri categories.
+
+Each zone tracks the quantity of Armor available across different players complete missions, they earn additional Armor pieces,
+which are also recorded in a 2x2 matrix representing rewards.
+Your task as a developer is to help write code that manages the Armor inventory by:
+
+
+1. Accepting input for the current Armor inventory in a 2x2 matrix (representing the storage zone)
+2. Accepting input for the armor rewards earned after completing missions, stored in another 2x2 matrix
+3. Calculating the updated inventory by adding both matrices
+4. Displaying the final inventory in a structured format for the player
+
+sample output: current Inventory [5 2]
+                                 [3 4]
+mission reward  [2 1]
+                [1 3]
+update inventory [7 3 ]
+                 [4 7]                */
+
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+    int inventory[2][2];
+    int rewards[2][2];
+    int finalInventory[2][2];
+
+    cout << "Enter current Armor Inventory (2x2 matrix):\n";
+    
+    for(int i = 0; i < 2; i++)
+    {
+        for(int j = 0; j < 2; j++)
+        {
+            cin >> inventory[i][j];
+        }
+    }
+
+    cout << "Enter Armor Rewards Earned (2x2 matrix):\n";
+    for(int i = 0; i < 2; i++)
+    {
+        for(int j = 0; j < 2; j++)
+        {
+            cin >> rewards[i][j];
+        }
+    }
+
+    // Adding both matrices
+    for(int i = 0; i < 2; i++)
+    {
+        for(int j = 0; j < 2; j++)
+        {
+            finalInventory[i][j] = inventory[i][j] + rewards[i][j];
+        }
+    }
+
+    cout << "\nUpdated Armor Inventory:\n";
+    
+    for(int i = 0; i < 2; i++)
+    {
+        for(int j = 0; j < 2; j++)
+        {
+            cout << finalInventory[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
