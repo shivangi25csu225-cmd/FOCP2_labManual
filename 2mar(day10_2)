@@ -1,0 +1,44 @@
+/*2.Write a C++ program to demonstrate function overloading by creating multiple functions named volume:
+Dictate
+Voice
+Add-ins
+Add ins
+Editor Copil
+• One function to calculate the volume of a cube (side)
+• One fuction to calculate the volume of a cuboid (length, breadth, height)
+• One function to calculate the volume of a cylinder (radius, height)
+Call all the overloaded volume functions in the main( function and display the calculated volumes.*/
+
+#include <iostream>
+using namespace std;
+
+// Function to calculate volume of a cube
+float volume(float side)
+{
+    return side * side * side;
+}
+
+// Function to calculate volume of a cuboid
+float volume(float length, float breadth, float height)
+{
+    return length * breadth * height;
+}
+
+// Function to calculate volume of a cylinder
+float volume(float radius, float height)
+{
+    return 3.14 * radius * radius * height;
+}
+
+int main()
+{
+    float side = 4;
+    float length = 5, breadth = 3, height = 2;
+    float radius = 3, cylHeight = 7;
+
+    cout << "Volume of Cube: " << volume(side) << endl;
+    cout << "Volume of Cuboid: " << volume(length, breadth, height) << endl;
+    cout << "Volume of Cylinder: " << volume(radius, cylHeight) << endl;
+
+    return 0;
+}
