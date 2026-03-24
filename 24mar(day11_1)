@@ -1,0 +1,41 @@
+#include<iostream>
+using namespace std;
+class Student{
+    string name;
+    int age;
+    int roll_no;
+     
+    public : void enter(){
+        cout<< " enter the details:"<<endl;
+        cin>> name>> age >> roll_no;
+        
+    }
+    void display(){
+        cout<< " Name of the student is:"<<name<<endl;
+        cout<< "Age is:"<< age <<endl;
+        cout<< "Roll no. is:"<< roll_no << endl;
+    }   
+};
+class Test : public Student{
+    int focp_num;
+    int phy_num;
+    int chem_num;
+    public : void enterMarks(){
+        cin>> focp_num>> phy_num>> chem_num;
+        
+        avg= (focp_num+ phy_num+ chem_num )/3;
+    }
+    void display(){
+        cout<<" Average marks is :"<<avg<<endl;
+    }
+};
+int main(){
+    Test s1;
+    s1.enter;
+    s1.display;
+    s1.enterMarks;
+    s1.display;
+    return 0;
+
+
+}
